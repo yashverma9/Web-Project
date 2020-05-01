@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="col s5">
+              <form #candidateForm="ngForm" (ngSubmit)="onSubmit(candidateForm)">
+                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="candidateService.selectedCandidate._id">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="can_id" #name="ngModel" [(ngModel)]="candidateService.selectedCandidate.can_id" placeholder="Enter Candidate ID" required>
+                    <label>Candidate ID :
+                      <label class="red-text">*</label>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="name" #name="ngModel" [(ngModel)]="candidateService.selectedCandidate.name" placeholder="Enter Full name" required>
+                    <label>Name :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="age" #name="ngModel" [(ngModel)]="candidateService.selectedCandidate.age" placeholder="Enter age">
+                    <label>Age :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input type="text" name="Constituency" #name="ngModel" [(ngModel)]="candidateService.selectedCandidate.constituency" placeholder="Enter contesting constituency" required>
+                    <label>Constituency :</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn btn-custom right" type="button" (click)="resetForm(candidateForm)">Reset</button>
+                    <button class="btn btn-custom right" type="submit" [disabled]="!candidateForm.valid">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col s7">
+                <table class="responsive-table highlight">
+                    <thead>
+                      <tr>
+                        <th>Candidate ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Constituency</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tr *ngFor="let can of candidateService.candidates">
+                      <td>{{can.can_id}}</td>
+                      <td>{{can.name}}</td>
+                      <td>{{can.age}}</td>
+                      <td>{{can.constituency}}</td>
+                      <td>
+                          <a class="action-btn" (click)="onEdit(can)">
+                            <i class="material-icons">edit</i>
+                          </a>
+                          <a class="action-btn" (click)="onDelete(can._id,candidateForm)">
+                            <i class="material-icons">delete</i>
+                          </a>
+                        </td>
+                    </tr>
+                  </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
