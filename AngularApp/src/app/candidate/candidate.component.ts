@@ -36,6 +36,7 @@ export class CandidateComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    window.location.reload()
     if (form.value._id == "") {
       this.candidateService.postCandidate(form.value).subscribe((res) => {
         this.resetForm(form);
