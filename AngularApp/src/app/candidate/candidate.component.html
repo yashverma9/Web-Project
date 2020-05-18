@@ -17,19 +17,25 @@
                 <div class="row">
                   <div class="input-field col s12">
                     <input type="text" name="name" #name="ngModel" [(ngModel)]="candidateService.selectedCandidate.name" placeholder="Enter Full name" required>
-                    <label>Name :</label>
+                    <label>Name :
+                      <label class="red-text">*</label>
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
                     <input type="text" name="age" #name="ngModel" [(ngModel)]="candidateService.selectedCandidate.age" placeholder="Enter age">
-                    <label>Age :</label>
+                    <label>Age :
+                      <label class="red-text">*</label>
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
                     <input type="text" name="constituency" #name="ngModel" [(ngModel)]="candidateService.selectedCandidate.constituency" placeholder="Enter contesting constituency" required>
-                    <label>Constituency :</label>
+                    <label>Constituency :
+                      <label class="red-text">*</label>
+                    </label>
                   </div>
                 </div>
                 <div class="row">
