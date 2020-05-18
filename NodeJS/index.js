@@ -7,7 +7,7 @@ var candidateController = require('./controllers/candidateController.js');
 
 var app = express();
 app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:4200' }));
+app.use(cors({ origin: 'https://election-final.herokuapp.com/' }));
 
 app.listen(3000, () => console.log('Server started at port : 3000'));
 

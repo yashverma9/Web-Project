@@ -12,7 +12,7 @@ import { Candidate } from './candidate.model';
 export class CandidateService {
   selectedCandidate: Candidate;
   candidates: Candidate[];
-  readonly baseURL = 'http://localhost:3000/candidate';
+  readonly baseURL = 'https://election-backend.herokuapp.com/';
 
   constructor(public http: HttpClient) { }
 
